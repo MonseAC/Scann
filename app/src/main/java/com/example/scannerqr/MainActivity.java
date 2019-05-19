@@ -3,6 +3,7 @@ package com.example.scannerqr;
 import android.app.Activity;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
@@ -18,5 +19,18 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         button = (Button) findViewById(R.id.button);
         final Activity activity = this;
+
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                IntentIntegrator integrator = new IntentIntegrator(activity);
+                integrator.setDesiredBarcodeFormats(IntentIntegrator.QR_CODE_TYPES);
+                integrator.setPrompt("Scan");
+                integrator.setCameraId(0);
+                integrator.setBeepEnabled(false);
+                integrator.setBarcodeImageEnabled(false);
+                integrator.initiateScan();
+            }
+        });
     }
 }
