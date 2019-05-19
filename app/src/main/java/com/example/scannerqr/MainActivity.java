@@ -1,6 +1,8 @@
 package com.example.scannerqr;
 
 import android.app.Activity;
+import android.content.Intent;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -32,5 +34,21 @@ public class MainActivity extends AppCompatActivity {
                 integrator.initiateScan();
             }
         });
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        IntentResult result = IntentIntegrator.parseActivityResult(requestCode, resultCode, data);
+        if(result != null){
+            if(result.getContents() == null){
+                Toast.makeText(this,"Se ha producido un error", Toast.LENGTH_LONG).show();
+            }
+            else{
+                Toast.makeText(this, result.getContents(),Toast.LENGTH_LONG).show();
+            }
+        }
+        else{
+            super.onActivityResult(requestCode, resultCode, data);
+        }
     }
 }
