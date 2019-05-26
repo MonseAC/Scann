@@ -15,6 +15,7 @@ import com.google.zxing.integration.android.IntentResult;
 public class MainActivity extends AppCompatActivity {
 
     private Button button;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
                 integrator.setBeepEnabled(false);
                 integrator.setBarcodeImageEnabled(false);
                 integrator.initiateScan();
+
             }
         });
     }
@@ -44,7 +46,9 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(this,"Se ha producido un error", Toast.LENGTH_LONG).show();
             }
             else{
-                Toast.makeText(this, result.getContents(),Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(MainActivity.this, PagScann.class);
+                intent.putExtra("message_key", result.getContents());
+                startActivity(intent);
             }
         }
         else{
