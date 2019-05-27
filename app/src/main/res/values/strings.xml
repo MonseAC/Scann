@@ -1,3 +1,5 @@
 <resources>
-    <string name="app_name">ScannerQR</string>
+    <string name="app_name">Lector de QR SALFADECO</string>
+    <string name="mensaj_bienvenida">Bienvenido al Lector de QR</string>
+    <string name="lector">Leer QR</string>
 </resources>
