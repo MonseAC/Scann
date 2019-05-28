@@ -17,7 +17,7 @@ public class PagScann extends AppCompatActivity {
         webView = findViewById(R.id.webVResScan);
         webView.getSettings().setJavaScriptEnabled(true);
         webView.setWebViewClient(new WebViewClient());
-        webView.loadUrl(pag);
+        webView.loadUrl("http://" + pag);
 
     }
 }
