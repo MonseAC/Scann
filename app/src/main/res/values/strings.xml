@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Lector de QR SALFADECO</string>
-    <string name="mensaj_bienvenida">Bienvenido al Lector de QR</string>
+    <string name="app_name">Galería del Deporte Costarricense</string>
+    <string name="mensaj_bienvenida">Bienvenido a la Galería Virtual</string>
     <string name="lector">Leer QR</string>
 </resources>
